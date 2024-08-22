@@ -1,3 +1,14 @@
 .searchbar_container {
   margin: 4em;
 }
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city {
+  border-bottom: 0.2em solid lightblue;
+  width: 105%;
+}
