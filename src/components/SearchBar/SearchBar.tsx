@@ -30,12 +30,13 @@ export const SearchBar = () => {
 
     CityLatitude &&
       CityLongitude &&
-      forecast &&
       ForecastApiCall.get(
         `forecast?latitude=${CityLongitude}&longitude=${CityLongitude}&forecast_days=7& &current=relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m&hourly=temperature_2m`,
         {}
       ).then((res) => setForecast(res.data));
   };
+
+  console.log(forecast);
 
   return (
     <div className="main_container">
@@ -45,17 +46,25 @@ export const SearchBar = () => {
             placeholder="search your city here!!"
             onSearch={onSearch}
             enterButton
+            allowClear
           />
         </Space>
       </div>
-      <div className="card">
-        <Card style={{ width: 400 }}>
-          <div className="city">
-            {data && data.results[0].name}, {data && data.results[0].country}
-          </div>
-          <div className="forecast"></div>
-        </Card>
-      </div>
+      {forecast && (
+        <div className="card">
+          <Card style={{ width: 400 }}>
+            <div className="city">
+              {data && data.results[0].name}, {data && data.results[0].country}
+            </div>
+            <div className="forecast">
+              <div>
+                {forecast && forecast.current.apparent_temperature.toFixed(0.1)}
+                {forecast && forecast.current_units.apparent_temperature}
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };

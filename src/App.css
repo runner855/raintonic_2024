@@ -2,37 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  background-image: url("https://img.freepik.com/free-vector/sky-background-video-conferencing_23-2148623068.jpg?t=st=1724339980~exp=1724343580~hmac=77382beaa1314e8a83a87e4cc69002c2fefdcdc1ff74e3d93f698b64ed4df167&w=2000");
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
 }

@@ -8,7 +8,11 @@
   justify-content: center;
 }
 
+.ant-card {
+  background-color: transparent;
+}
+
 .city {
-  border-bottom: 0.2em solid lightblue;
+  border-bottom: 0.2em solid rgb(106, 92, 228);
   width: 105%;
 }

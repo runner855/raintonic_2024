@@ -31,7 +31,7 @@ weather_code:number;
 }
 
 export interface ForecastCurrentUnitsProps{
-  apparent_temperature:string;
+apparent_temperature:string;
 interval:string;
 precipitation:string;
 relative_humidity_2m:string;

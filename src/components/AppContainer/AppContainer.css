@@ -1,0 +1,10 @@
+body {
+  background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--BFZvxfoy--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://images.unsplash.com/photo-1545193544-312983719627%3Fixlib%3Drb-1.2.1%26ixid%3DeyJhcHBfaWQiOjEyMDd9%26auto%3Dformat%26fit%3Dcrop%26w%3D1650%26q%3D80")
+    no-repeat center / cover;
+}
+
+.title {
+  margin: 4em;
+  font-weight: 700;
+  font-size: 1.5em;
+}
