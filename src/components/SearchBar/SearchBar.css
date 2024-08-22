@@ -30,7 +30,13 @@
   display: inline;
 }
 
-svg {
+.humidity_icon,
+.wind_icon {
   color: aqua;
   line-height: 0vw;
+}
+
+.empty_heart,
+.full_heart {
+  color: red;
 }
