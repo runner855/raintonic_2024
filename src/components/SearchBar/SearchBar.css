@@ -15,4 +15,22 @@
 .city {
   border-bottom: 0.2em solid rgb(106, 92, 228);
   width: 105%;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.temperature {
+  font-weight: 700;
+  font-size: 3em;
+}
+
+.humidity {
+  font-weight: 500;
+  font-size: 2em;
+  display: inline;
+}
+
+svg {
+  color: aqua;
+  line-height: 0vw;
 }

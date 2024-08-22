@@ -6,6 +6,8 @@ import CitiesApiCall from "../../Api/CitiesApiCall";
 import { CityDataProps, DataProps, ForecastProps } from "../../Types/Apptypes";
 import ForecastApiCall from "../../Api/ForecastApiCall";
 import { Card } from "antd";
+import { WiHumidity } from "react-icons/wi";
+import { FaWind } from "react-icons/fa";
 import "../SearchBar/SearchBar.css";
 
 type SearchProps = GetProps<typeof Input.Search>;
@@ -54,12 +56,21 @@ export const SearchBar = () => {
         <div className="card">
           <Card style={{ width: 400 }}>
             <div className="city">
+              {forecast && forecast.current.weather_code}{" "}
               {data && data.results[0].name}, {data && data.results[0].country}
             </div>
             <div className="forecast">
-              <div>
+              <div className="temperature">
                 {forecast && forecast.current.apparent_temperature.toFixed(0.1)}
                 {forecast && forecast.current_units.apparent_temperature}
+              </div>
+              <div className="humidity">
+                <WiHumidity className="humidity_icon" />{" "}
+                {forecast && forecast.current.relative_humidity_2m}
+                {forecast && forecast.current_units.relative_humidity_2m}
+              </div>
+              <div className="wind">
+                <FaWind /> {forecast && forecast.current.wind_speed_10m}
               </div>
             </div>
           </Card>
