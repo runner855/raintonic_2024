@@ -25,18 +25,31 @@
 }
 
 .humidity {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 2em;
-  display: inline;
+  line-height: 0.4;
 }
 
 .humidity_icon,
 .wind_icon {
   color: aqua;
-  line-height: 0vw;
+}
+
+.humidity_icon {
+  font-size: 1.4em;
 }
 
 .empty_heart,
 .full_heart {
   color: red;
+}
+
+.wind {
+  font-weight: 400;
+  font-size: 2em;
+}
+
+.temperature_icon {
+  color: aqua;
+  font-size: 0.8em;
 }

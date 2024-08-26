@@ -10,6 +10,7 @@ import { WiHumidity } from "react-icons/wi";
 import { FaWind } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
+import { FaTemperatureFull } from "react-icons/fa6";
 import "../SearchBar/SearchBar.css";
 
 type SearchProps = GetProps<typeof Input.Search>;
@@ -21,6 +22,7 @@ export const SearchBar = () => {
   const [data, setData] = useState<DataProps>();
   const [forecast, setForecast] = useState<ForecastProps>();
   const [favoriteCity, setFavoriteCity] = useState<boolean>(false);
+  const [items, setItems] = useState([]);
   const CityLatitude = data?.results[0].latitude.toFixed(2);
   const CityLongitude = data?.results[0].longitude.toFixed(2);
 
@@ -40,7 +42,11 @@ export const SearchBar = () => {
       ).then((res) => setForecast(res.data));
   };
 
-  console.log(favoriteCity);
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
+
+  console.log("localStorage", localStorage);
 
   return (
     <div className="main_container">
@@ -56,7 +62,7 @@ export const SearchBar = () => {
       </div>
       {forecast && (
         <div className="card">
-          <Card style={{ width: 250 }}>
+          <Card style={{ width: 350, height: 320 }}>
             <div className="city">
               <div onClick={() => setFavoriteCity(!favoriteCity)}>
                 {favoriteCity ? (
@@ -69,7 +75,7 @@ export const SearchBar = () => {
             </div>
             <div className="forecast">
               <div className="temperature">
-                {forecast && forecast.current.weather_code}{" "}
+                <FaTemperatureFull className="temperature_icon" />{" "}
                 {forecast && forecast.current.apparent_temperature.toFixed(0.1)}
                 {forecast && forecast.current_units.apparent_temperature}
               </div>
@@ -80,7 +86,8 @@ export const SearchBar = () => {
               </div>
               <div className="wind">
                 <FaWind className="wind_icon" />{" "}
-                {forecast && forecast.current.wind_speed_10m}
+                {forecast && forecast.current.wind_speed_10m.toFixed(0.1)}{" "}
+                {forecast && forecast.current_units.wind_speed_10m}
               </div>
             </div>
           </Card>
